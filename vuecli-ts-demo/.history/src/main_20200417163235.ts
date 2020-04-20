@@ -43,8 +43,8 @@ import '@/assets/styles';
 // Mock Server
 import './data/mock/index';
 // 全局vue模板filters过滤器
-import filters from '@/common/filters';
-console.log(filters);
+// import filters from '@/common/filters';
+// console.log(filters);
 // 本页全局directive指令
 // import directives from './common/directives'
 // 引入正则校验

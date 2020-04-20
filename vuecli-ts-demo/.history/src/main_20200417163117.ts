@@ -54,9 +54,9 @@ console.log(filters);
 import 'components';
 
 // 注册vue模板过滤器
-// Object.keys(filters).forEach((key) => {
-//   Vue.filter(key, filters[key]);
-// });
+Object.keys(filters).forEach((key) => {
+  Vue.filter(key, filters[key]);
+});
 
 // 注册全局指令方法
 // Object.keys(directives).forEach(key => {

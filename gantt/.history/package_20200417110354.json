@@ -1,0 +1,34 @@
+{
+  "author": {
+    "name": "Faris Ansari, William"
+  },
+  "deprecated": false,
+  "description": "",
+  "devDependencies": {
+    "deepmerge": "^2.0.1",
+    "eslint": "^4.17.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "jest": "^22.2.1",
+    "prettier": "1.10.2",
+    "rollup": "^0.55.3",
+    "rollup-plugin-less": "",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
+  "eslintIgnore": [
+    "dist"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "name": "william-gantt",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "prettier": "prettier es6 --write \"{src/*,tests/*,rollup.config}.js\"",
+    "start": "yarn run dev",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "babel": "babel dist --out-dir dist"
+  },
+  "version": "0.1.0"
+}

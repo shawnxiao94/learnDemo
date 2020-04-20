@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-04-16 14:12:03
+ * @LastEditTime: 2020-04-16 15:41:43
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /cell-project/src/index.js
+ */
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
@@ -5,9 +13,9 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Component>
     <App />
-  </React.StrictMode>,
+  </React.Component>,
   document.getElementById('root'),
 )
 

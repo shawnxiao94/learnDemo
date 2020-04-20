@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=11"></meta>
+	<meta charset="UTF-8">
+	<title>Gantt</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			background: #f1f1f1;
+		}
+		.g-container {
+			width: 80%;
+			margin: 0 auto;
+		}
+		.g-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.g-btns span {
+			color: blue;
+			cursor: pointer;
+			margin-right: 30px;
+		}
+		.g-btns span:hover {
+			color: blueviolet;
+			cursor: pointer;
+		}
+	</style>
+	<link rel="stylesheet" href="dist/william-gantt.css" />
+	<script src="dist/william-gantt.js"></script>
+</head>
+<body>
+	<div class="g-container">
+		<div class="g-header">
+			<h2>甘特图插件</h2>
+			<div class="g-btns">
+				<span data="Quarter Day">按6小时</span>
+				<span data="Half Day">按上下午</span>
+				<span data="Day">按天</span>
+				<span data="Week">按星期</span>
+				<span data="Month">按月</span>
+				<span data="Year">按年</span>
+			</div>
+		</div>
+		<div class="gantt-target"></div>
+	</div>
+	<script>
+		var tasks = [
+			{
+				start: '2018-10-03 00:00:00',
+				end: '2018-10-06 00:00:00',
+				name: '任务1',
+				id: "1",
+				progress: 57
+			},
+			{
+				start: '2018-10-04 06:00:00',
+				end: '2018-10-05 17:00:00',
+				name: '任务2',
+				id: "2",
+				progress: 54,
+				dependencies: '1'
+			},
+			{
+				start: '2018-10-05 20:00:00',
+				end: '2018-10-06 10:00:00',
+				name: '任务3',
+				id: "3",
+				progress: 23,
+			},
+			{
+				start: '2018-10-05 16:00:00',
+				end: '2018-10-07 08:00:00',
+				name: '任务4',
+				id: "4",
+				progress: 86,
+				dependencies: '2'
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "5",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "6",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "7",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "8",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "9",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "10",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "11",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "12",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "13",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "14",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "15",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "16",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "17",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "18",
+				progress: 53
+			},
+			{
+				start: '2018-10-05 15:00:00',
+				end: '2018-10-20 20:00:00',
+				name: '任务5',
+				id: "19",
+				progress: 53
+			}
+		]
+		var gantt_chart = new Gantt(".gantt-target", tasks, {
+			on_click: function (task) {
+				console.log(task);
+			},
+			on_date_change: function(task, start, end) {
+				console.log(task, start, end);
+			},
+			on_progress_change: function(task, progress) {
+				console.log(task, progress);
+			},
+			on_view_change: function(mode) {
+				console.log(mode);
+			},
+			view_mode: 'Day',
+			language: 'zh'
+		});
+		document.querySelector('.g-btns').addEventListener('click',function(e){
+			gantt_chart.change_view_mode(e.target.attributes[0].value)
+		});
+		console.log(gantt_chart);
+	</script>
+</body>
+</html>

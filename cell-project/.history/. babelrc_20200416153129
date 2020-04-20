@@ -1,0 +1,12 @@
+//还可以同时引入ant-design less样式
+{
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "css"
+      }
+    ]
+  ]
+}

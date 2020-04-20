@@ -49,6 +49,7 @@
     "react-app-polyfill": "^1.0.6",
     "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.20",
     "resolve": "1.15.0",
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.2",
@@ -135,10 +136,18 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "style": "css"
+        }
+      ]
     ]
   },
   "devDependencies": {
-    "babel-plugin-import": "^1.13.0",
-    "react-hot-loader": "^4.5.3"
+    "babel-plugin-import": "^1.13.0"
   }
 }

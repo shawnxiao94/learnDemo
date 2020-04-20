@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-04-14 17:51:01
- * @LastEditTime: 2020-04-17 16:31:17
+ * @LastEditTime: 2020-04-17 15:02:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vuecli-ts-demo/src/main.ts
@@ -44,7 +44,6 @@ import '@/assets/styles';
 import './data/mock/index';
 // 全局vue模板filters过滤器
 import filters from '@/common/filters';
-console.log(filters);
 // 本页全局directive指令
 // import directives from './common/directives'
 // 引入正则校验
@@ -54,9 +53,9 @@ console.log(filters);
 import 'components';
 
 // 注册vue模板过滤器
-// Object.keys(filters).forEach((key) => {
-//   Vue.filter(key, filters[key]);
-// });
+Object.keys(filters).forEach((key) => {
+  Vue.filter(key, filters[key]);
+});
 
 // 注册全局指令方法
 // Object.keys(directives).forEach(key => {

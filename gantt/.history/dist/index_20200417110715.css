@@ -1,0 +1,296 @@
+.gantt-container {
+  position: relative;
+  overflow: auto;
+  font-size: 12px;
+}
+
+.gantt-container .gantt {
+  overflow: hidden;
+  position: relative;
+}
+
+.gantt-container .gantt .grid-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.gantt-container .gantt .grid-row {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.gantt-container .gantt .grid-row:nth-child(even) {
+  background: #f5f5f5;
+}
+
+.gantt-container .gantt .row-line {
+  border-bottom: 1px solid #ebeff2;
+}
+
+.gantt-container .gantt .tick {
+  background: #e0e0e0;
+}
+
+.gantt-container .gantt .tick.thick {
+  background: #b8c2cc;
+}
+
+.gantt-container .gantt .today-highlight {
+  background: #fcf8e3;
+  opacity: 0.5;
+}
+
+.gantt-container .gantt .bar {
+  background: #b8c2cc;
+  user-select: none;
+  transition: opacity .3s ease;
+}
+
+.gantt-container .gantt .bar-progress {
+  background: #a3a3ff;
+  overflow: hidden;
+}
+
+.gantt-container .gantt .bar-invalid {
+  background: transparent;
+  border: 1px solid #8D99A6;
+}
+
+.gantt-container .gantt .bar-invalid~.bar-label {
+  background: #555;
+}
+
+.gantt-container .gantt .bar-label {
+  color: #fff;
+  font-size: 12px;
+  font-weight: lighter;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+
+.gantt-container .gantt .bar-label.big {
+  color: #555;
+  text-anchor: start;
+}
+
+.gantt-container .gantt .handle {
+  background: #ddd;
+  cursor: ew-resize;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease;
+}
+
+.gantt-container .gantt .handle.progress {
+  width: 0;
+  height: 0;
+  background: none;
+  border-width: 0 5px 10px;
+  border-style: solid;
+  border-color: transparent transparent #ddd;
+}
+
+.gantt-container .gantt .bar-wrapper {
+  cursor: pointer;
+  outline: none;
+}
+
+.gantt-container .gantt .bar-wrapper:hover .bar,
+.gantt-container .gantt .bar-wrapper.active .bar {
+  background: #a9b5c1;
+  box-shadow: 0 0 0 2px #8D99A6;
+}
+
+.gantt-container .gantt .bar-wrapper:hover .bar-progress,
+.gantt-container .gantt .bar-wrapper.active .bar-progress {
+  background: #8989ff;
+}
+
+.gantt-container .gantt .bar-wrapper:hover .handle,
+.gantt-container .gantt .bar-wrapper.active .handle {
+  visibility: visible;
+  opacity: 1;
+}
+
+.gantt-container .gantt .lower-text,
+.gantt-container .gantt .upper-text {
+  font-size: 12px;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+
+.gantt-container .gantt .upper-text {
+  color: #555;
+  text-align: center;
+}
+
+.gantt-container .gantt .lower-text {
+  color: #333;
+  text-align: center;
+}
+
+.gantt-container .gantt .hide {
+  display: none;
+}
+
+.gantt-container .popup-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0;
+  color: #959da5;
+  border-radius: 3px;
+}
+
+.gantt-container .popup-wrapper .title {
+  border-bottom: 3px solid #a3a3ff;
+  padding: 10px;
+}
+
+.gantt-container .popup-wrapper .subtitle {
+  padding: 10px;
+  color: #dfe2e5;
+}
+
+.gantt-container .popup-wrapper .pointer {
+  position: absolute;
+  height: 5px;
+  margin: 0 0 0 -5px;
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.8);
+}
+
+.gantt-container .bar-arrow .gantt-arrow {
+  background: #666;
+}
+
+.gantt-container .bar-arrow .gantt-arrow-icon {
+  width: 0;
+  height: 0;
+  background: none;
+  border-width: 5px 0 5px 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent #666;
+}
+
+.gantt-layout {
+  display: flex;
+  border: 1px solid #e0e0e0;
+}
+
+.gantt-layout * {
+  moz-user-select: -moz-none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.gantt-layout .gantt-container {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+.gantt-layout .gantt-task-table {
+  position: relative;
+  overflow-x: auto;
+}
+
+.gantt-layout .gantt-task-table .task-table-header,
+.gantt-layout .gantt-task-table .task-table-row {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.gantt-layout .gantt-task-table .task-table-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.gantt-layout .gantt-task-table .task-table-row {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.gantt-layout .gantt-task-table .task-table-row:nth-child(even) {
+  background: #f5f5f5;
+}
+
+.gantt-layout .gantt-task-table .task-table-header-column,
+.gantt-layout .gantt-task-table .task-table-column {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #e0e0e0;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.gantt-layout .gantt-task-table .task-table-column {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.gantt-layout .gantt-task-table .task-table-column-id {
+  justify-content: center;
+}
+
+.gantt-layout .gantt-layout-line {
+  width: 7px;
+  cursor: ew-resize;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gantt-layout .gantt-layout-line .gantt-layout-line-left,
+.gantt-layout .gantt-layout-line .gantt-layout-line-right {
+  width: 5px;
+  height: 50px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  background: #ebeff2;
+  cursor: pointer;
+}
+
+.gantt-layout .gantt-layout-line .gantt-layout-line-left.hide,
+.gantt-layout .gantt-layout-line .gantt-layout-line-right.hide {
+  display: none;
+}
+
+.gantt-layout .gantt-layout-line .gantt-layout-line-left:before,
+.gantt-layout .gantt-layout-line .gantt-layout-line-right:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 5px 5px 5px 0;
+  border-color: transparent #666 transparent transparent;
+}
+
+.gantt-layout .gantt-layout-line .gantt-layout-line-right {
+  margin-top: 10px;
+}
+
+.gantt-layout .gantt-layout-line .gantt-layout-line-right:before {
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #666;
+}
+
+.gantt-layout .gantt-svg {
+  position: absolute;
+  box-sizing: border-box;
+}
